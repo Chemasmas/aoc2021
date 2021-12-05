@@ -128,28 +128,6 @@ object Day4Part2 {
         val b = co2.joinToString("").toInt(2)
         val res = a * b
         println(res)
-        /*
-        val max = digits.reduce { acc, ints ->
-            ints.mapIndexed { index, i -> i + acc[index] }
-        }.map{
-            if(it>size-it) 1 else 0
-        }
-
-        val min = max.map { if(it == 0) 1 else 0 }
-        val oxigeno = funOx(max, digits,0)
-        println(max)
-        println(oxigeno)
-
-        val gamma = max.joinToString("").toInt(2)
-        val epsilon = min.joinToString("").toInt(2)
-        val res = gamma * epsilon
-
-
-        println(size)
-        println(gamma)
-        println(epsilon)
-        println(res)
-        */
     }
 
     private fun funCO2(digits: List<List<Int>>, i: Int): List<Int> {
@@ -169,13 +147,4 @@ object Day4Part2 {
         val filtrados = digits.filter { it[i] == filtro }
         return funOx(filtrados,i+1)
     }
-
-    /*
-    private fun funOx(max: List<Int>, lineList: List<List<Int>>, i: Int): List<Int> {
-        if(i>max.size) return lineList.first()
-        if (lineList.size == 1) return lineList.first()
-        val filtrados = lineList.filter { it[i] == max[i]}
-        return funOx(max, filtrados, i+1)
-    }
-     */
 }
